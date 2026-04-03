@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow p-4">
+    <h3>Encrypt File</h3>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label class="form-label">Choose a file</label>
+        <input type="file" name="input_file" class="form-control">
+        <button class="btn btn-primary mt-3 w-100">Encrypt File</button>
+    </form>
+
+    {% if combined %}
+    <hr>
+    <h5>Encryption Successful</h5>
+
+    <label class="fw-bold">Combined Output</label>
+    <textarea id="combinedBox" class="form-control" rows="3" readonly>{{ combined }}</textarea>
+
+    <button class="btn btn-success mt-2" onclick="copyCombined()">Copy Combined Output</button>
+
+    <script>
+        function copyCombined() {
+            navigator.clipboard.writeText(document.getElementById("combinedBox").value);
+            alert("Copied!");
+        }
+    </script>
+
+    {% if ml_label %}
+    <div class="alert alert-info mt-3">
+        File ML Suspicion: <b>{{ ml_label }}</b> ({{ ml_score }})
+    </div>
+    {% endif %}
+
+    {% endif %}
+</div>
+
+{% endblock %}

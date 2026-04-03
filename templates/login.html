@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow p-4" style="max-width: 450px; margin: auto;">
+    <h3 class="text-center mb-3">Login</h3>
+
+    <form method="POST">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control mb-2" placeholder="Enter email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" class="form-control mb-2" placeholder="Enter password" required>
+
+        <label>6-digit OTP</label>
+        <input type="text" name="otp" class="form-control mb-3" placeholder="Enter OTP from Authenticator" required>
+
+        <button class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <hr>
+    <p class="text-center">
+        Don't have an account? <a href="/signup">Signup</a>
+    </p>
+</div>
+
+{% endblock %}

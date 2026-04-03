@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow p-4">
+    <h3 class="mb-3">Decrypt Text</h3>
+
+    <form method="POST">
+        <label class="form-label">Paste Combined Input</label>
+        <textarea class="form-control"
+                  name="combined_input"
+                  rows="3"
+                  placeholder="key::ciphertext"></textarea>
+
+        <button class="btn btn-primary mt-3 w-100">Decrypt</button>
+    </form>
+
+    {# -------- Integrity Status -------- #}
+    {% if status == "VALID" %}
+        <div class="alert alert-success mt-3">
+            ✔ Integrity verified. Ciphertext is NOT tampered.
+        </div>
+    {% elif status %}
+        <div class="alert alert-danger mt-3">
+            ❌ {{ status }}
+        </div>
+    {% endif %}
+
+    {# -------- Decrypted Output -------- #}
+    {% if plaintext %}
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5>Decrypted Text</h5>
+                <textarea class="form-control" rows="5" readonly>
+{{ plaintext }}
+                </textarea>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Decrypt Data</h2>
+
+<form method="POST" class="form-card">
+    <label>Encrypted Text / File Data</label>
+    <textarea name="encrypted_text" required></textarea>
+
+    <label>AES Key (hex)</label>
+    <textarea name="aes_key" required></textarea>
+
+    <button type="submit">Decrypt</button>
+</form>
+
+{% if decrypted_text %}
+<div class="result-box">
+    <h3>Decrypted Output</h3>
+    <textarea readonly>{{ decrypted_text }}</textarea>
+</div>
+{% endif %}
+
+{% endblock %}

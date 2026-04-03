@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Audio Encryption (Browser-Side AES)</h2>
+
+<div class="form-card">
+
+    <button id="startRec">🎙 Start Recording</button>
+    <button id="stopRec" disabled>⏹ Stop</button>
+
+    <p id="recStatus"></p>
+
+    <hr>
+
+    <button id="encryptAudio" disabled>🔐 Encrypt Audio</button>
+
+    <div id="encResult" style="display:none;">
+        <h3>Encrypted Audio Ready</h3>
+
+        <p><strong>AES Key:</strong></p>
+        <textarea id="audioKey" readonly></textarea>
+
+        <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/upload_encrypted_audio">
+            <input type="file" id="encAudioFile" name="audio" hidden>
+            <button type="submit">⬆ Upload Encrypted Audio</button>
+        </form>
+    </div>
+
+</div>
+
+<script src="/static/audio.js"></script>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow p-4" style="max-width: 450px; margin: auto;">
+    <h3 class="text-center mb-3">Create Account</h3>
+
+    <form method="POST">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control mb-2" required>
+
+        <label>Password</label>
+        <input type="password" name="password" class="form-control mb-3" required>
+
+        <button class="btn btn-success w-100">Signup</button>
+    </form>
+
+    <hr>
+    <p class="text-center">
+        Already have an account? <a href="/login">Login</a>
+    </p>
+</div>
+
+{% endblock %}

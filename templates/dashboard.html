@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="neon-container">
+    <h2 class="mb-4">Dashboard</h2>
+
+    <div class="grid">
+        <a href="/encrypt/text" class="card neon-card">Encrypt Text</a>
+        <a href="/decrypt/text" class="card neon-card">Decrypt Text</a>
+        <a href="/encrypt/file" class="card neon-card">Encrypt File</a>
+        <a href="/decrypt/file" class="card neon-card">Decrypt File</a>
+        <a href="/encrypt/audio" class="card neon-card">Audio Encryption</a>
+        <a href="/logs" class="card neon-card">View Logs</a>
+        <a href="/toggle_theme" class="card neon-card">Toggle Theme</a>
+    </div>
+</div>
+
+<style>
+.neon-container { max-width: 900px; margin:auto; padding:30px; }
+.grid { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+.neon-card {
+    padding:25px;
+    text-align:center;
+    border-radius:12px;
+    background:#111;
+    color:#0ff;
+    border:2px solid #0ff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+.neon-card:hover {
+    box-shadow:0 0 20px #0ff, inset 0 0 10px #0ff;
+    transform:scale(1.03);
+}
+</style>
+
+{% endblock %}

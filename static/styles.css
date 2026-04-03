@@ -1,0 +1,254 @@
+/* ---------------------------------------------------------
+   GLOBAL THEME FIX — NEON CYBER UI
+--------------------------------------------------------- */
+
+/* Dark neon background */
+body {
+    background: #0a0f1f;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* UNIVERSAL TEXT VISIBILITY FIX */
+body, p, h1, h2, h3, h4, h5, h6, label,
+input, textarea, select, a, span, div {
+    color: #ffffff !important;
+}
+
+/* Placeholder fix */
+::placeholder {
+    color: #b8c2ff !important;
+}
+
+/* ---------------------------------------------------------
+   FORMS
+--------------------------------------------------------- */
+
+input, textarea, select {
+    background: #0f1733 !important;
+    color: #ffffff !important;
+    border: 1px solid #2b3f80 !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #00eaff !important;
+    box-shadow: 0 0 10px #00eaffaa !important;
+    outline: none !important;
+}
+
+/* ---------------------------------------------------------
+   BUTTONS
+--------------------------------------------------------- */
+
+button, .btn {
+    background: #00eaff;
+    color: #000 !important;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover, .btn:hover {
+    background: #00c2d1;
+    box-shadow: 0 0 10px #00eaff;
+}
+
+/* Danger / Delete Button */
+.btn-danger {
+    background: #ff3b3b !important;
+}
+
+.btn-danger:hover {
+    background: #ff1c1c !important;
+    box-shadow: 0 0 10px #ff3b3b;
+}
+
+/* ---------------------------------------------------------
+   CARDS / BOXES
+--------------------------------------------------------- */
+
+.card {
+    background: #121833 !important;
+    border: 1px solid #233066 !important;
+    box-shadow: 0 0 12px #00eaff33;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.card-title {
+    color: #00eaff !important;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------------
+   NAVIGATION
+--------------------------------------------------------- */
+
+nav, .navbar {
+    background: #0d142b !important;
+    padding: 12px;
+    border-bottom: 2px solid #00eaff;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #00eaff !important;
+}
+
+/* ---------------------------------------------------------
+   TABLES
+--------------------------------------------------------- */
+
+table {
+    background: #121833 !important;
+    color: #ffffff !important;
+}
+
+table td, table th {
+    background: #121833 !important;
+    color: #ffffff !important;
+    border-color: #233066 !important;
+}
+
+/* ---------------------------------------------------------
+   SPECIAL NEON TEXT EFFECT
+--------------------------------------------------------- */
+
+.neon-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff66;
+}
+
+/* ---------------------------------------------------------
+   CONTAINERS
+--------------------------------------------------------- */
+
+.container, .content-box {
+    padding-top: 30px;
+}
+
+/* ---------------------------------------------------------
+   LINKS
+--------------------------------------------------------- */
+
+a {
+    color: #00eaff !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00c2d1 !important;
+}
+
+/* ---------------------------------------------------------
+   ALERTS
+--------------------------------------------------------- */
+
+.alert-info {
+    background: #004f7a !important;
+    color: #ffffff !important;
+}
+
+.alert-success {
+    background: #0a6636 !important;
+}
+
+.alert-danger {
+    background: #7a0a0a !important;
+}
+/* FIX FOR LABEL VISIBILITY on dark bg */
+label {
+    color: #00eaff !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 6px #00eaff88;
+}
+
+/* Fix for small helper text (like "Don't have an account?") */
+.small-text,
+.card a,
+p {
+    color: #b8eaff !important;
+}
+
+/* Fix for form field text color */
+input {
+    color: #ffffff !important;
+    font-size: 15px;
+}
+/* --- FINAL FIX FOR INVISIBLE LABELS ON DARK MODE --- */
+
+label,
+.card label,
+.form-label {
+    color: #00eaff !important;             /* Neon cyan text */
+    font-weight: 600 !important;           /* Slightly bold */
+    text-shadow: 0 0 6px #00eaffaa !important; /* Neon glow */
+    opacity: 1 !important;
+}
+
+/* Fix Bootstrap turning label text grey */
+.card p, .card span {
+    color: #e8f7ff !important;
+}
+
+/* Fix input placeholder visibility */
+::placeholder {
+    color: #88cfff !important;
+}
+/* =========================
+   GLOBAL TEXT READABILITY
+   ========================= */
+
+/* Labels like "Enter text", "Combined Output" */
+label,
+.form-label,
+.text-label {
+    color: #bffcff !important;   /* neon cyan */
+    font-weight: 500;
+}
+
+/* Input placeholders */
+::placeholder {
+    color: #9adbe8 !important;
+    opacity: 1;
+}
+
+/* Section headings */
+h1, h2, h3, h4, h5 {
+    color: #5efcff;
+}
+
+/* Small helper texts */
+small, .help-text {
+    color: #9adbe8;
+}
+
+/* Normal paragraph text */
+p, span {
+    color: #e0f7ff;
+}
+
+/* Disabled or subtle info */
+.text-muted {
+    color: #7faeb8 !important;
+}
+input,
+textarea {
+    color: #eaffff !important;
+    background-color: #0e0e0e;
+    border: 1px solid #00f7ff;
+}

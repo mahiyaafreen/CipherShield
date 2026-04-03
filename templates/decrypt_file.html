@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow p-4">
+    <h3>Decrypt File</h3>
+
+    <form method="POST">
+        <label class="form-label">Paste Combined Input</label>
+        <textarea class="form-control" name="combined_input" rows="3" placeholder="key::ciphertext"></textarea>
+
+        <label class="form-label mt-3">Original Filename</label>
+        <input class="form-control" name="orig_filename" placeholder="example.jpg">
+
+        <button class="btn btn-primary mt-3 w-100">Decrypt</button>
+    </form>
+
+    {% if preview_b64 %}
+    <hr>
+    <h4>Decrypted Image Preview</h4>
+    <img src="data:image/png;base64,{{ preview_b64 }}" class="img-fluid rounded border" />
+
+    <a href="/dashboard" class="btn btn-secondary mt-3">Back</a>
+    {% endif %}
+
+</div>
+
+{% endblock %}

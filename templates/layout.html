@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EncryptX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/neon.css">
+
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark px-4">
+        <a class="navbar-brand" href="/dashboard">EncryptX</a>
+
+        {% if current_user.is_authenticated %}
+        <div>
+            <a href="/toggle_theme" class="btn btn-secondary btn-sm">Theme</a>
+            <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+        </div>
+        {% endif %}
+    </nav>
+
+    <div class="container my-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+            <div class="alert alert-{{ cat }} mt-2">{{ msg }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

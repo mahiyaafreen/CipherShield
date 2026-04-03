@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Encrypt Data</h2>
+
+<form method="POST" enctype="multipart/form-data" class="form-card">
+
+    <h3>Text Encryption</h3>
+    <textarea name="plaintext" placeholder="Type text to encrypt..."></textarea>
+
+    <button type="submit">Encrypt Text</button>
+
+    {% if encrypted_text %}
+    <div class="result-box">
+        <p><strong>Encrypted Output:</strong></p>
+        <textarea readonly>{{ encrypted_text }}</textarea>
+
+        <p><strong>AES Key (hex):</strong></p>
+        <textarea readonly>{{ aes_key }}</textarea>
+
+        {% if risk_label %}
+        <p class="risk {{ risk_label }}">ML Risk: {{ risk_label }} ({{ risk_score }})</p>
+        {% endif %}
+    </div>
+    {% endif %}
+</form>
+
+<hr>
+
+<h3>Encrypt File</h3>
+
+<form method="POST" enctype="multipart/form-data" class="form-card">
+    <input type="file" name="file" required>
+    <button type="submit">Encrypt File</button>
+</form>
+
+{% endblock %}
